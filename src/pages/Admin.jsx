@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import DataTable from '../components/admin/DataTable';
 import { TiThMenu } from 'react-icons/ti';
 import ModalContainer from '../components/admin/ModalContainer';
+import axios from 'axios';
 
 function Admin(props) {
 	const [showModal, setShowModal] = useState(false);
+	const [theads, setTheads] = useState([]);
+	const [datas, setDatas] = useState([]);
 
 	const handleClick = () => {
 		setShowModal(!showModal);
 	};
+
+	useEffect(() => {
+		axios
+			.get('https://localhost:8080/api/admin')
+			.then((res) => {
+				setTheads([...res.data.dates]);
+				setDatas([...res.data.datas]);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, []);
 
 	return (
 		<div>
@@ -17,10 +32,11 @@ function Admin(props) {
 				<MenuButton onClick={handleClick}>
 					<TiThMenu />
 				</MenuButton>
-				{showModal ? <ModalContainer showModal={showModal} /> : null}
+
 				<AdminTitle>관리자 페이지</AdminTitle>
 			</Header>
-			<DataTable />
+			{showModal ? <ModalContainer showModal={showModal} /> : null}
+			<DataTable theads={theads} datas={datas} />
 		</div>
 	);
 }
