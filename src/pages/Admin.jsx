@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import DataTable from '../components/admin/DataTable';
 import { TiThMenu } from 'react-icons/ti';
 import ModalContainer from '../components/admin/ModalContainer';
 import axios from 'axios';
+import DataTable from '../components/admin/DataTable';
 
 function Admin(props) {
 	const [showModal, setShowModal] = useState(false);
@@ -18,8 +18,8 @@ function Admin(props) {
 		axios
 			.get('https://localhost:8080/api/admin')
 			.then((res) => {
-				setTheads([...res.data.dates]);
-				setDatas([...res.data.datas]);
+				setTheads((prev) => [res.data.dates]);
+				setDatas((prev) => [res.data.datas]);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -32,11 +32,10 @@ function Admin(props) {
 				<MenuButton onClick={handleClick}>
 					<TiThMenu />
 				</MenuButton>
-
 				<AdminTitle>관리자 페이지</AdminTitle>
 			</Header>
 			{showModal ? <ModalContainer showModal={showModal} /> : null}
-			<DataTable theads={theads} datas={datas} />
+			<DataTable theads={theads} tbodys={datas} />
 		</div>
 	);
 }
