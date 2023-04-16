@@ -19,9 +19,13 @@ function DataTable({ theads, tbodys }) {
 						<TableCell>또래</TableCell>
 						<TableCell>이름</TableCell>
 						<TableCell>날짜수</TableCell>
-						{theads[0].map((thead) => (
-							<TableCell key={thead}>{thead}</TableCell>
-						))}
+						{Object.keys(theads).length > 0 ? (
+							theads[0].map((thead) => (
+								<TableCell key={thead}>{thead}</TableCell>
+							))
+						) : (
+							<></>
+						)}
 					</TableRow>
 				</TableHead>
 				<TableBody>
