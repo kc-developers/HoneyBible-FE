@@ -14,7 +14,7 @@ function Intro() {
 			<HoneyImage src="./assets/honey.svg" alt="honeyLogo" />
 			<IntroText>
 				<IntroBig>
-					<div>맑청하!</div>
+					<div>맑청하!!!!</div>
 					<div>어서오세요,</div>
 					<div>
 						<YellowText>꿀성경</YellowText>
