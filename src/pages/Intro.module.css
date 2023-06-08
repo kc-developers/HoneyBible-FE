@@ -1,0 +1,34 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--color-background-black);
+}
+
+.logo {
+	top: 10%;
+}
+
+.textWrap {
+	color: #ffffff;
+}
+
+.textBig {
+	font-size: 4rem;
+	letter-spacing: -0.03em;
+}
+
+.yellowText {
+	color: var(--color-yellow);
+	font-weight: 700;
+}
+
+.tabButton {
+	/* width: 30%; */
+	margin: 0 auto;
+	text-align: center;
+	border: none;
+	background-color: var(--color-background-black);
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 2rem;
+}
