@@ -15,13 +15,13 @@ function Intro() {
 			<div className={styles.textWrap}>
 				<div className={styles.textBig}>
 					<div>맑청하!!!!</div>
-					<div>어서요세요,</div>
+					<div>어서 오세요,</div>
 					<div>
 						<span className={styles.yellowText}>꿀성경</span>
 						<span>입니다.</span>
 					</div>
 				</div>
-				<div>맑은샘광천교회 청년부</div>
+				<div className={styles.textSmall}>맑은샘광천교회 청년부</div>
 			</div>
 			<button className={styles.tabButton} onClick={handleClick}>
 				탭해서 시작하기

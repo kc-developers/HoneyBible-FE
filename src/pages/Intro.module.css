@@ -2,6 +2,7 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--color-background-black);
+	margin: auto;
 }
 
 .logo {
@@ -15,6 +16,12 @@
 .textBig {
 	font-size: 4rem;
 	letter-spacing: -0.03em;
+	font-weight: 300;
+}
+
+.textSmall {
+	margin-top: 2rem;
+	font-size: 1.6rem;
 }
 
 .yellowText {
@@ -23,12 +30,16 @@
 }
 
 .tabButton {
-	/* width: 30%; */
-	margin: 0 auto;
+	width: fit-content;
+	bottom: 10%;
+	margin: auto;
+	margin-top: 60%;
 	text-align: center;
+	display: block;
 	border: none;
 	background-color: var(--color-background-black);
 	color: #ffffff;
 	font-weight: 500;
 	font-size: 2rem;
+	font-family: 'Pretendard';
 }
