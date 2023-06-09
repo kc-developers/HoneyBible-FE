@@ -1,6 +1,6 @@
 import React from 'react';
-import InputForms from '../components/bibleRange/InputForms';
-import Header from '../components/Header';
+import InputForms from '../components/admin/bibleRange/InputForms';
+import Header from '../components/admin/Header';
 
 function BibleRange() {
 	return (

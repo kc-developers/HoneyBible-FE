@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { TiThMenu } from 'react-icons/ti';
-import ModalContainer from './admin/ModalContainer';
+import ModalContainer from './ModalContainer';
 
 function Header({ text }) {
 	const [showModal, setShowModal] = useState(false);

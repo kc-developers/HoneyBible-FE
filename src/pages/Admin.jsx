@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import DataTable from '../components/admin/DataTable';
-import Header from '../components/Header';
+import Header from '../components/admin/Header';
 
 function Admin() {
 	const [theads, setTheads] = useState([]);
@@ -22,7 +22,7 @@ function Admin() {
 	return (
 		<>
 			<Header text={'관리자 페이지'} />
-			<DataTable theads={theads} tbodys={datas} />
+			<DataTable />
 		</>
 	);
 }
