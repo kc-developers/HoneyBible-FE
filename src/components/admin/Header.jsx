@@ -12,11 +12,13 @@ function Header({ text }) {
 
 	return (
 		<div className={styles.container}>
-			<button className={styles.button} onClick={handleClick}>
-				<TiThMenu />
-			</button>
-			{showModal ? <ModalContainer showModal={showModal} /> : null}
 			<div className={styles.title}>{text}</div>
+			<div>
+				<button className={styles.button} onClick={handleClick}>
+					<TiThMenu />
+				</button>
+				{showModal ? <ModalContainer showModal={showModal} /> : null}
+			</div>
 		</div>
 	);
 }

@@ -15,8 +15,18 @@ function ModalContainer({ showModal }) {
 
 	return (
 		<div className={styles.modalWrap}>
-			<button className={styles.button}>데이터 확인</button>
-			<button className={styles.button}>통독범위 입력</button>
+			<button
+				className={styles.button}
+				onClick={() => handleClick('checkData')}
+			>
+				데이터 확인
+			</button>
+			<button
+				className={styles.button}
+				onClick={() => handleClick('bibleRange')}
+			>
+				통독범위 입력
+			</button>
 		</div>
 	);
 }
