@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import styles from './ModalContainer.module.css';
 
 function ModalContainer({ showModal }) {
 	const navigate = useNavigate();
@@ -14,24 +14,11 @@ function ModalContainer({ showModal }) {
 	};
 
 	return (
-		<ModalWrap>
-			<ModalButton onClick={() => handleClick('checkData')}>
-				데이터 확인
-			</ModalButton>
-			<ModalButton onClick={() => handleClick('bibleRange')}>
-				통독범위 입력
-			</ModalButton>
-		</ModalWrap>
+		<div className={styles.modalWrap}>
+			<button className={styles.button}>데이터 확인</button>
+			<button className={styles.button}>통독범위 입력</button>
+		</div>
 	);
 }
 
 export default ModalContainer;
-
-const ModalWrap = styled.div``;
-
-const ModalButton = styled.button`
-	margin: 0.5rem;
-	background-color: transparent;
-	border: 1px solid black;
-	border-radius: 2rem;
-`;
