@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styles from './Header.module.css';
 import { TiThMenu } from 'react-icons/ti';
 import ModalContainer from './ModalContainer';
 
@@ -11,42 +11,14 @@ function Header({ text }) {
 	};
 
 	return (
-		<>
-			<HeaderWrap>
-				<MenuButton onClick={handleClick}>
-					<TiThMenu />
-				</MenuButton>
-				<AdminTitle>{text}</AdminTitle>
-			</HeaderWrap>
+		<div className={styles.container}>
+			<button className={styles.button} onClick={handleClick}>
+				<TiThMenu />
+			</button>
 			{showModal ? <ModalContainer showModal={showModal} /> : null}
-		</>
+			<div className={styles.title}>{text}</div>
+		</div>
 	);
 }
 
 export default Header;
-
-const HeaderWrap = styled.div`
-	width: 100%;
-	padding: 1rem 0;
-	display: flex;
-	align-items: center;
-	background-color: #14b560;
-`;
-
-const MenuButton = styled.button`
-	border: none;
-	background-color: transparent;
-	align-items: center;
-	font-size: 2.4rem;
-
-	:hover {
-		transition: all ease 0.1s;
-		transform: scale(1.02);
-	}
-`;
-
-const AdminTitle = styled.div`
-	margin: 0 auto;
-	align-items: center;
-	font-size: 2rem;
-`;

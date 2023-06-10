@@ -7,6 +7,7 @@ function Admin() {
 	const [theads, setTheads] = useState([]);
 	const [datas, setDatas] = useState([]);
 
+	// 데이터 불러오는 부분을 DataTable로 옮기고 싶다
 	useEffect(() => {
 		axios
 			.get('https://localhost:8080/api/admin')
