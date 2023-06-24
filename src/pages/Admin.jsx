@@ -1,5 +1,5 @@
-import DataTable from '../components/admin/DataTable';
-import Header from '../components/admin/Header';
+import DataTable from '../components/admin/dataTable/DataTable';
+import Header from '../components/admin/header/Header';
 
 function Admin() {
 	return (
