@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './ModalContainer.module.css';
+import styles from './Buttons.module.css';
 
-function ModalContainer({ showModal }) {
+function Buttons() {
 	const navigate = useNavigate();
 
 	const handleClick = (type) => {
@@ -31,4 +31,4 @@ function ModalContainer({ showModal }) {
 	);
 }
 
-export default ModalContainer;
+export default Buttons;

@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Header.module.css';
-import ModalContainer from './ModalContainer';
+import Buttons from './Buttons';
 
 function Header({ text }) {
-	const [showModal, setShowModal] = useState(false);
-
-	const handleClick = () => {
-		setShowModal(!showModal);
-	};
-
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>{text}</div>
-			<ModalContainer />
+			<Buttons />
 		</div>
 	);
 }
