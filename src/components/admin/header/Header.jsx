@@ -17,7 +17,7 @@ function Header({ text }) {
 				<button className={styles.button} onClick={handleClick}>
 					<TiThMenu />
 				</button>
-				{showModal ? <ModalContainer showModal={showModal} /> : null}
+				<div>{showModal ? <ModalContainer showModal={showModal} /> : null}</div>
 			</div>
 		</div>
 	);

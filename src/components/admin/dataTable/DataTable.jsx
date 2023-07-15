@@ -47,7 +47,7 @@ function DataTable() {
 			<Table size="small">
 				<TableHead>
 					<TableRow>
-						<TableCell align="center">변경</TableCell>
+						<TableCell align="center">버튼</TableCell>
 						<TableCell align="center">또래</TableCell>
 						<TableCell align="center">이름</TableCell>
 						<TableCell align="center">날짜수</TableCell>
