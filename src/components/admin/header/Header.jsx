@@ -12,9 +12,7 @@ function Header({ text }) {
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>{text}</div>
-			<div>
-				<ModalContainer />
-			</div>
+			<ModalContainer />
 		</div>
 	);
 }
