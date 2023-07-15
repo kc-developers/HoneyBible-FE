@@ -6,4 +6,10 @@
 	background-color: transparent;
 	border: 1px solid black;
 	border-radius: 2rem;
+	cursor: pointer;
+}
+
+.button:hover {
+	transition: all ease 0.1s;
+	transform: scale(1.02);
 }
