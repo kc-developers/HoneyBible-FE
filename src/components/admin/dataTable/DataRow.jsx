@@ -2,7 +2,7 @@ import { TableCell, TableRow } from '@mui/material';
 import React from 'react';
 
 function DataRow(data) {
-	const { age, name, sum } = data;
+	const { age, name, sum } = data.data;
 	return (
 		<TableRow>
 			<TableCell>

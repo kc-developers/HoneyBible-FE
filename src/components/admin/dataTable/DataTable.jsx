@@ -74,4 +74,19 @@ export const examples = [
 		name: '추희승',
 		sum: 30,
 	},
+	{
+		age: 97,
+		name: '추희승',
+		sum: 30,
+	},
+	{
+		age: 88,
+		name: '추희승',
+		sum: 30,
+	},
+	{
+		age: 988,
+		name: '추희승',
+		sum: 30,
+	},
 ];
