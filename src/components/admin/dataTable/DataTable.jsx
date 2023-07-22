@@ -12,6 +12,8 @@ import { dates } from './dates';
 import DataRow from './DataRow';
 
 function DataTable() {
+	const [datas, setDatas] = useState(examples);
+
 	/* data 받아오는 부분 .. 데이터 어떻게 짰는지 알아야 함!!
 	const [data, setData] = useState([]);
 
@@ -55,10 +57,8 @@ function DataTable() {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{examples.map((example) => {
-						return (
-							<DataRow key={`${example.age}_${example.name}`} data={example} />
-						);
+					{datas.map((data) => {
+						return <DataRow key={`${data.age}_${data.name}`} data={data} />;
 					})}
 				</TableBody>
 			</Table>
