@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './Form';
-import styled from 'styled-components';
+import styles from './InputForms.module.css';
 
 export const dates = [31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -23,27 +23,15 @@ function InputForms() {
 	};
 
 	return (
-		<FormContainer onSubmit={handleSubmit}>
-			<FlexWrap>
+		<form onSubmit={handleSubmit}>
+			<div className={styles.flexWrap}>
 				{dates.map((date, index) => (
-					<MonthWrap>{setInputs(date, index)}</MonthWrap>
+					<div>{setInputs(date, index)}</div>
 				))}
-			</FlexWrap>
+			</div>
 			<button>저장 버튼</button>
-		</FormContainer>
+		</form>
 	);
 }
 
 export default InputForms;
-
-const FormContainer = styled.form``;
-
-const FlexWrap = styled.div`
-	width: 90%;
-	height: 70vh;
-	margin: 0 auto;
-	overflow: scroll;
-	display: flex;
-`;
-
-const MonthWrap = styled.div``;

@@ -1,0 +1,7 @@
+.flexWrap {
+	width: 90%;
+	height: 70vh;
+	margin: 0 auto;
+	overflow: scroll;
+	display: flex;
+}
