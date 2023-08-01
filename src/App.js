@@ -8,6 +8,7 @@ import Ranking from './pages/Ranking';
 import Admin from './pages/Admin';
 import BibleRange from './pages/BibleRange';
 import NotFound from './pages/NotFound';
+import Join from './pages/Join';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Intro />} />
+					<Route path="/join" element={<Join />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/datepicker" element={<DatePicker />} />
 					<Route path="/overview" element={<Overview />} />

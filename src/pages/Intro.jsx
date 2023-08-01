@@ -6,7 +6,7 @@ function Intro() {
 	const navigate = useNavigate();
 
 	const handleClick = () => {
-		navigate('/login');
+		navigate('/join');
 	};
 
 	return (
