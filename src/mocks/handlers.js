@@ -7,6 +7,7 @@ export const handlers = [
 				dates: ['20230327', '20230328', '20230329', '20230330'],
 				datas: [
 					{
+						id: 0,
 						name: '추희승',
 						age: '98',
 						dateNum: 4,
@@ -18,6 +19,7 @@ export const handlers = [
 						},
 					},
 					{
+						id: 1,
 						name: '추희승',
 						age: '98',
 						dateNum: 4,
@@ -29,6 +31,7 @@ export const handlers = [
 						},
 					},
 					{
+						id: 2,
 						name: '추희승',
 						age: '98',
 						dateNum: 4,
@@ -40,6 +43,7 @@ export const handlers = [
 						},
 					},
 					{
+						id: 3,
 						name: '추희승',
 						age: '98',
 						dateNum: 4,

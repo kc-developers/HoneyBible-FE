@@ -1,0 +1,45 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--color-background-black);
+	margin: auto;
+}
+
+.logo {
+	top: 10%;
+}
+
+.textWrap {
+	color: #ffffff;
+}
+
+.textBig {
+	font-size: 4rem;
+	letter-spacing: -0.03em;
+	font-weight: 300;
+}
+
+.textSmall {
+	margin-top: 2rem;
+	font-size: 1.6rem;
+}
+
+.yellowText {
+	color: var(--color-yellow);
+	font-weight: 700;
+}
+
+.tabButton {
+	width: fit-content;
+	bottom: 10%;
+	margin: auto;
+	margin-top: 60%;
+	text-align: center;
+	display: block;
+	border: none;
+	background-color: var(--color-background-black);
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 2rem;
+	font-family: 'Pretendard';
+}
