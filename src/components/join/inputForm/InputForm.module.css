@@ -2,7 +2,7 @@
 	width: 100%;
 }
 
-.alert {
+.message {
 	color: white;
 }
 
@@ -10,11 +10,13 @@
 }
 
 .input {
-	width: 90%;
+	width: 250px;
+	padding: none;
 }
 
 .selectBox {
-	width: 90%;
+	width: 250px;
+	padding: none;
 }
 
 .button {
