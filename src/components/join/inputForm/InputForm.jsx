@@ -31,13 +31,36 @@ function InputForm({ type }) {
 
 	const [age, setAge] = useState(null);
 	const [name, setName] = useState('');
+	const [ageValid, setAgeValid] = useState(true);
+	const [nameValid, setNameValid] = useState(true);
 
 	const handleNameChange = (e) => {
 		setName(e.target.value);
+		handleNameValid(e.target.value);
+	};
+
+	const handleNameValid = (name) => {
+		let pattern = /[a-zA-Z]/;
+
+		if (name === '' || pattern.test(name)) {
+			setNameValid(true);
+		} else {
+			setNameValid(false);
+		}
 	};
 
 	const handleAgeChange = (e) => {
 		setAge(e.value);
+
+		handleAgeValid(e.value);
+	};
+
+	const handleAgeValid = (age) => {
+		if (age === null) {
+			setAgeValid(true);
+		} else {
+			setAgeValid(false);
+		}
 	};
 
 	const handleSubmit = (e) => {
@@ -56,6 +79,7 @@ function InputForm({ type }) {
 					value={name}
 					onChange={handleNameChange}
 				/>
+				{nameValid && <div className={styles.alert}>*한글만 입력해 주세요</div>}
 			</div>
 			<div className={styles.inputWrap}>
 				<Select
@@ -64,6 +88,9 @@ function InputForm({ type }) {
 					onChange={handleAgeChange}
 					className={styles.selectBox}
 				/>
+				{ageValid && (
+					<div className={styles.alert}>*또래가 선택되지 않았습니다</div>
+				)}
 			</div>
 			{type === 'join' && (
 				<button className={styles.button}>회원가입 하기</button>
