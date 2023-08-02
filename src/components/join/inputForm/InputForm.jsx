@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import styles from './InputForm.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function InputForm({ type }) {
 	const [age, setAge] = useState(null);
 	const [name, setName] = useState('');
 	const [ageValid, setAgeValid] = useState(false);
 	const [nameValid, setNameValid] = useState(false);
+
+	const navigate = useNavigate();
 
 	const handleNameChange = (e) => {
 		setName(e.target.value);
@@ -41,6 +44,8 @@ function InputForm({ type }) {
 		if (nameValid && ageValid) {
 			console.log(name, age);
 		}
+
+		navigate('/login');
 	};
 
 	return (
@@ -58,7 +63,12 @@ function InputForm({ type }) {
 				)}
 			</div>
 			<div className={styles.inputWrap}>
-				<select name="select" id="select" onChange={handleAgeChange}>
+				<select
+					name="select"
+					id="select"
+					className={styles.selectBox}
+					onChange={handleAgeChange}
+				>
 					<option defaultValue hidden>
 						또래를 선택해 주세요
 					</option>

@@ -3,21 +3,23 @@
 }
 
 .message {
-	color: white;
+	color: var(--color-button-yellow);
 }
 
 .inputWrap {
 }
 
 .input {
-	width: 250px;
+	width: 90%;
 	padding: none;
+	border: none;
 }
 
 .selectBox {
-	width: 250px;
-	padding: none;
+	width: 90%;
+	padding: 0 2px;
 }
 
 .button {
+	background-color: var(--color-button-yellow);
 }
