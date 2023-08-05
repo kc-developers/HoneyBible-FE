@@ -1,5 +1,7 @@
 import { rest } from 'msw';
 
+const members = [{ name: '추희승', age: '97' }];
+
 export const handlers = [
 	rest.get('https://localhost:8080/api/admin', async (req, res, ctx) => {
 		return res(
@@ -57,5 +59,10 @@ export const handlers = [
 				],
 			})
 		);
+	}),
+	rest.post('https://localhost:8080/auth/join', async (req, res, ctx) => {
+		members.push({ name: req.name, age: req.age });
+
+		return res(ctx.status(201));
 	}),
 ];
