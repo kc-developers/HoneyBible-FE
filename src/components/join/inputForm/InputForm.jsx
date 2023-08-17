@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './InputForm.module.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function InputForm({ type }) {
 	const [age, setAge] = useState(null);
@@ -42,7 +43,15 @@ function InputForm({ type }) {
 		e.preventDefault();
 
 		if (nameValid && ageValid) {
-			console.log(name, age);
+			// axios
+			// 	.get('https://localhost:8080/api/admin')
+			// 	.then((res) => {
+			// 		setData((prev) => [res.data.data]);
+			// 	})
+			// 	.catch((err) => {
+			// 		console.log(err);
+			// 	});
+			// const result = axios.push('https://localhost:8080/auth/join');
 		}
 
 		navigate('/login');
