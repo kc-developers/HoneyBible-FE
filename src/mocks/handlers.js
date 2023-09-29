@@ -65,4 +65,9 @@ export const handlers = [
 
 		return res(ctx.status(201));
 	}),
+	rest.post('https://localhost:8080/auth/login', async (req, res, ctx) => {
+		members.push({ name: req.name, age: req.age });
+
+		return res(ctx.status(201));
+	}),
 ];
