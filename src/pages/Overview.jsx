@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import "./Overview.css";
 
 function Overview(props) {
@@ -10,140 +9,99 @@ function Overview(props) {
   				<summary><strong>창세기</strong> "천 지 창 조"</summary>
 				<div class="content">
 					<p>창세기는 우주 만물의 시작과 기원을 보여 주는 책인 동시에 인류 가운데 들어온 무서운 죄의 근원도 분명하게 드러낸다. 하지만 이에 머물지 않고 창세기는 죄악으로 인해 영원한 파멸 가운데 놓여 있는 인류를 그대로 방치하지 않고 친히 찾아오셔서 구원의 길을 활짝 열어주신 하나님의 놀랍고 오묘한 구원 섭리를 명쾌하게 보여 주고 있다.</p>
-					<img src="./assets/Genesis-01.svg"></img>
+					<img src="./assets/Overview/Genesis-01.svg" alt="창세기 지도"></img>
 					<p><br></br>창세기는 비옥한 초승달 지역(페르시아 만에서 시작하여 티그리스와 유브라데 강을 중심한 메소보다미아 지역, 또 요단 강을 중심으로 한 팔레스타인 전역과 애굽의 나일 강 유역에 이르는 광활한 지대)을 무대로 한다. 그중 전반부의 창조와 타락, 홍수와 바벨탑 사건 등은 가나안 북부 지역, 이어 아브라함과 이삭, 야곱의 역사는 가나안 땅, 마지막으로 요셉과 관련된 역사는 애굽이 중심 무대다.</p>
-					<img src="./assets/Genesis-02.svg"></img>
+					<img src="./assets/Overview/Genesis-02.svg" alt="창세기 표"></img>
   				</div>
 			</details>
-			<details>
+			<details>	
   				<summary><strong>출애굽기</strong> "애 굽 탈 출"</summary>
 				<div class="content">
-					<p>창세기는 우주 만물의 시작과 기원을 보여 주는 책인 동시에 인류 가운데 들어온 무서운 죄의 근원도 분명하게 드러낸다. 하지만 이에 머물지 않고 창세기는 죄악으로 인해 영원한 파멸 가운데 놓여 있는 인류를 그대로 방치하지 않고 친히 찾아오셔서 구원의 길을 활짝 열어주신 하나님의 놀랍고 오묘한 구원 섭리를 명쾌하게 보여 주고 있다.</p>
-					<img src="./assets/Genesis-01.svg"></img>
-					<p><br></br>창세기는 비옥한 초승달 지역(페르시아 만에서 시작하여 티그리스와 유브라데 강을 중심한 메소보다미아 지역, 또 요단 강을 중심으로 한 팔레스타인 전역과 애굽의 나일 강 유역에 이르는 광활한 지대)을 무대로 한다. 그중 전반부의 창조와 타락, 홍수와 바벨탑 사건 등은 가나안 북부 지역, 이어 아브라함과 이삭, 야곱의 역사는 가나안 땅, 마지막으로 요셉과 관련된 역사는 애굽이 중심 무대다.</p>
-					<img src="./assets/Genesis-02.svg"></img>
+					<p>애굽으로 이주한 야곱과 그 가족(70여 명)은 하나님의 은혜로 많은 무리를 이루었다. 본서는 그들 무리가 애굽 땅에서 당하는 혹독한 고난과 노예 생활, 그리고 구원 역사의 결정판이라 할 수 있는 출애굽 사건을 거쳐 신약 예배의 모형이 되는 제사 제도의 정립과 성막 완공 등을 소개하고 있다. 우리는 출애굽기를 통해 곤고한 인생이 구세주이신 그리스도로 말미암아 구원얻어 하나님을 찬양하고 예배하는 복된 인생으로 전환되는 일련의 구속 과정을 재발견하게 된다.</p>
+					<img src="./assets/Overview/Exodus-01.svg" alt="출애굽기 지도"></img>
+					<p><br></br>이스라엘 백성의 생활 무대인 애굽의 고센 땅과 노역 현장들(비돔, 라암셋). 출애굽 구원 역사의 분깃점인 홍해. 시내 산에 도착하기까지 거쳐간 신 광야의 마라, 엘림, 르비딤 등 여러 도시들. 율법과 계명을 수여받은 시내 산 입니다.</p>
+					<img src="./assets/Overview/Exodus-02.svg" alt="출애굽기 표"></img>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>민수기</strong> "광 야 생 활"</summary>
+				<div class="content">
+					<p>민수기는 출애굽한 이스라엘 백성이 38년 동안 광야에서 방랑하다 요단 동편 모압 평지에 당도하기까지의 과정을 그린 유랑의 역사를 기록한 책이다. 이스라엘 백성이 가나안 땅의 주인이 되기 위해 연단받은 광야 생활은 곧 하늘 가나안(천국)을 약속받은 성도들이 이 땅에서 연단과 훈련의 과정을 능히 이기고 승리해야 한다는 교훈을 준다.</p>
+					<img src="./assets/Overview/Numbers-01.svg " alt="민수기 지도"></img>
+					<p><br></br>행진의 출발지인 시내산, 열두 정탐꾼을 파견하고 불신앙으로 하나님을 대적했던 실패의 장소 가데스 바네아, 열두 정탐꾼이 두루 탐지했던 약속의 땅 가나안, 38년 동안 유랑한 바란 광야, 가나안 입성 전 마지막 정착했던 요단 동편의 모압 평원, 또 거기까지 거쳐온 에돔과 모압이 본서의 주요 무대다.</p>
+					<img src="./assets/Overview/Numbers-02.svg" alt="민수기 표"></img>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>여호수아</strong> "가 나 안 정 복"</summary>
+				<div class="content">
+					<p>여호수아서는 모세의 후계자인 여호수아가 이스라엘 백성을 인솔하고 요단 강을 건너가서 약속의 땅 가나안을 정복하고, 하나님께서 주신 영토를 각 지파 백성들에게 분배함으로써 하나님이 이스라엘의 조상들에게 주시기로 약속하셨던 내용들을 성취해가는 일련의 과정을 기록한 책이다. 따라서 본서는 오늘날 이 땅에서 하나님의 나라를 건설하고 확장시켜 나가야 할 사명을 부여받은 우리 성도들에게 하나의 좋은 모델을 제시해 준다고 할 수 있다.</p>
+					<img src="./assets/Overview/Joshua-01.svg" alt="여호수아 지도"></img>
+					<p><br></br>광야 생활의 마지막 체류지 모압 평원, 요단 강, 길갈, 정복 전쟁의 첫 전투지인 가나안 중부의 여리고와 아이 성. 여호수아가 정복한 가나안 남부와 북부 지방의 여러 도시들. 영토 분배시 이스라엘 백성이 지파별로 할당받은 여러 도시들이다.</p>
+					<img src="./assets/Overview/Joshua-02.svg" alt="여호수아 표"></img>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>사사기</strong> "죄 반 복, 구 원"</summary>
+				<div class="content">
+					<p>사사기는 통일된 국가 조직을 갖추기 전 일종의 과도 체제하에서 이스라엘 백성이 ‘각기 자기의 소견에 옳은 대로’ 처신하던 타락하고 범죄한 암울했던 역사를 배경으로 한다. 우리는 사사기에서 범죄한 이스라엘 백성을 징계하는 수단으로 하나님이 이방 군대를 동원하시고, 또 회개하는 이스라엘 백성을 위해 사사를 보내사 구원하시는 심판과 구원의 반복적인 역사를 발견하게 되며, 아울러 세상 역사를 주관하시는 하나님의 의로운 통치 원리를 배우게 된다.</p>
+					<img src="./assets/Overview/Judges-01.svg" alt="사사기 지도"></img>
+					<p><br></br>최초의 사사 옷니엘을 비롯하여 우리에게 잘 알려진 유명한 사사 삼손 등 본서를 대표하는 12사사가 활동한 가나안의 여러 도시들. 또한 사사들이 정복한 이방 나라들과 도시들.</p>
+					<img src="./assets/Overview/Judges-02.svg" alt="사사기 표"></img>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>사무엘상</strong> "왕 정 시 작"</summary>
+				<div class="content">
+					<p>히브리 성경에서 한 권으로 이루어져 있는 사무엘서는 개역 성경에서 사무엘상과 사무엘하로 구분된다. 먼저 사무엘상은 사사 시대가 마감되고 왕정 시대가 시작되는 한 세기 동안의 전환기 역사를 다루고 있다. 사무엘상은 특히 세 지도자의 활동을 중심으로 요약될 수 있는데, 사사 시대 말기에 마지막 사사요, 선지자로 활약하며 이스라엘 백성을 지도한 사무엘과 왕정 시대를 연 초대 임금 사울, 사울을 대신하여 이스라엘의 지도자요 2대 왕으로 세움받은 다윗이 대표적 인물이다.</p>
+					<img src="./assets/Overview/1Samuel-01.svg" alt="사무엘상 지도"></img>
+					<p><br></br>사무엘서의 전반부인 사무엘상에서는 중심 인물인 사무엘 선지자의 출생지 라마. 당시 성막이 있던 실로. 민족적 대회개 운동이 전개된 미스바. 다윗이 사울을 피해 도주한 망명처 블레셋의 가드와 시글락. 사울이 최후를 맞이한 길보아 산 등이 중심 무대가 된다.</p>
+					<img src="./assets/Overview/1Samuel-02.svg" alt="사무엘상 표"></img>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>사무엘하</strong> "다 윗 통 치"</summary>
+				<div class="content">
+					<p>사무엘상에 이어 계속되는 사무엘하는 사울 왕의 죽음으로 시작되어 다윗의 즉위와 40년 통치 대부분을 취급하는데, 다윗의 즉위와 왕국의 부흥을 기술하는 전반부(삼하 1-10장), 그리고 다윗의 실패와 역경(삼하 11-20장)을 기술한 후반부로 크게 이분(二分)된다.</p>
+					<img src="./assets/Overview/2Samuel-01.svg" alt="사무엘하 지도"></img>
+					<p><br></br>사무엘하에서는 다윗의 전기 7년 통치 장소인 헤브론. 후기 33년 통치가 이루어진 이스라엘의 수도 예루살렘. 그리고 모압, 암몬, 블레셋 등 다윗이 평정한 주변 여러 나라들이 중심 무대를 이룬다.</p>
+					<img src="./assets/Overview/2Samuel-02.svg" alt="사무엘하 표"></img>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>열왕기상</strong> "분 열 왕 국"  &amp; <strong>열왕기하</strong> "왕 국 몰 락"</summary>
+				<div class="content">
+					<p>열왕기서는 다윗 왕의 죽음에서부터 왕국 분열을 거쳐 북이스라엘 왕 아합의 죽음에 이르기까지 120여 년 역사를 그린 ‘열왕기상’과 북이스라엘 왕 아하시야의 통치에서부터 남북 왕국의 멸망과 포로기까지 300여 년 역사를 그린 ‘열왕기하’로 구분된다. 이렇듯 열왕기서는 비록 선민이면서도 하나님을 저버린 통치자의 연약함과 그 나라의 유한함을 유감없이 보여 주고 있다. 그와 동시에 선민 이스라엘 역사 가운데서 끊임없이 간섭하시는 하나님의 절대 주권과 능력을 여과없이 기술하고 있다. 따라서 본서는 당신의 백성의 운명을 주장하고 계신 하나님의 통치 원리를 배우는 데 더 없이 훌륭한 역사 교과서로 평가되고 있다.</p>
+					<img src="./assets/Overview/Kings-01.svg" alt="열왕기상하 지도"></img>
+					<p><br></br>솔로몬 사후 분열된 남유다 왕국의 수도 예루살렘, 북이스라엘의 수도 사마리아. 그외 남북 왕조의 주요 도시들. 북왕조를 멸망시킨 앗수르. 남유다를 멸망시키고 백성들을 포로로 끌고 간 바벨론. 그리고 남유다에 지속적으로 영향력을 행사했던 애굽.</p>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>역대상</strong> "성 전 준 비"  &amp; <strong>역대하</strong> "성 전 건 축"</summary>
+				<div class="content">
+					<p>사무엘서나 열왕기서와 동시대의 역사를 기술하고 있는 역대기는 다윗의 계보에서부터 다윗의 통치 전반의 역사를 다루는 ‘역대상’과 솔로몬의 즉위와 통치, 왕국 분열 후 남유다 왕국의 역사를 다루는 ‘역대하’로 구분된다. 그러나 역대기가 사무엘서나 열왕기서와 차이점이 있다면 사무엘서나 열왕기서가 선지자적 관점에서 왕을 중심으로 한 이스라엘의 정치 역사를 기술하고 있는 반면 역대기는 제사장적 관점에서 예루살렘 성전을 중심으로 한 종교적 측면을 다루고 있다는 점이다. 이런 이유에서 특히 역대하는 멸망한 북왕국은 거의 언급하지 않고 개혁 성향이 뛰어난 남유다 선왕(善王)들의 업적에 대해서는 많은 지면을 할애하고 있다.</p>
+					<img src="./assets/Overview/Chronicles-01.svg" alt="역대상하 지도"></img>
+					<p><br></br>솔로몬 사후 분열된 남유다 왕국의 수도 예루살렘, 북이스라엘의 수도 사마리아. 그외 남북 왕조의 주요 도시들. 북왕조를 멸망시킨 앗수르. 남유다를 멸망시키고 백성들을 포로로 끌고 간 바벨론. 그리고 남유다에 지속적으로 영향력을 행사했던 애굽.</p>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>에스라</strong> "성 전 재 건"</summary>
+				<div class="content">
+					<p>역대하의 끝부분에 언급된 고레스의 유다 포로 본토 귀환령을 다시 반복함으로 시작되는 본서는 스룹바벨이 주도하는 1차 포로 귀환과 귀국한 유다 백성의 성전 재건 사역(1-6장), 이어서 학사 에스라가 주도하는 2차 포로 귀환과 종교개혁, 그리고 대부흥 운동의 역사(7-10장)로 끝을 맺는다. 이런 본서의 역사는 비록 이스라엘(남유다) 백성이 범죄하여 나라를 잃고 바벨론에 포로가 되지만 연단의 기간을 거친 후 반드시 본토로 돌아오게 하시겠다는 하나님의 언약(렘 29:10-14)이 실제로 이스라엘(유다) 역사 가운데서 어떻게 성취되고 있는지를 생생하게 보여준다.</p>
+					<img src="./assets/Overview/Ezra-01.svg" alt="역대상하 지도"></img>
+					<p><br></br>본서는 1차, 2차 등 두 차례에 걸친 포로 귀환 사건을 중심으로 전개된다. 따라서 본서는 포로로 끌려간 유다 백성이 집단으로 살던 바벨론 남부 유브라데와 티그리스 강 중간의 평원 도시 닙불(Nippur), 포로 귀환의 경유지인 유브라데 강 연안 도시 바벨론, 레셉, 알레포, 수리아의 하맛, 다메섹, 그리고 포로 귀환의 종착점인 예루살렘 등이 중심무대다.</p>
+  				</div>
+			</details>
+			<details>	
+  				<summary><strong>느혜미야</strong> "성 벽 재 건"</summary>
+				<div class="content">
+					<p>본서는 3차 포로 귀환의 인솔자인 느헤미야가 귀환한 유다 백성과 더불어 무너진 예루살렘 성벽을 재건함으로 이스라엘의 정치적·사회적 안정을 꾀하고 그 위에 더하여 학사 에스라에 의해 주도된 신앙 부흥 운동이 더욱 가속화되어 신앙의 개혁을 이루어 나가는 일련의 과정들을 생동감 있게 기술하고 있다.
+					<br></br><br></br>느헤미야가 바사왕의 술관원장으로 있던 바사 제국의 수도 수산. 느헤미아가 총독으로 지내며 성곽을 재건했던 예루살렘. 3차 포로 귀환의 행선지 등이 본서의 무대가 된다.</p>
+					<img src="./assets/Overview/Nehemiah-01.svg" alt="느혜미야 지도"></img>
   				</div>
 			</details>
 	  	</div>
 		  
 	);
 }
-
 export default Overview;
-
-class Accordion {
-	constructor(el) {
-	  // Store the <details> element
-	  this.el = el;
-	  // Store the <summary> element
-	  this.summary = el.querySelector('summary');
-	  // Store the <div class="content"> element
-	  this.content = el.querySelector('.content');
-  
-	  // Store the animation object (so we can cancel it if needed)
-	  this.animation = null;
-	  // Store if the element is closing
-	  this.isClosing = false;
-	  // Store if the element is expanding
-	  this.isExpanding = false;
-	  // Detect user clicks on the summary element
-	  this.summary.addEventListener('click', (e) => this.onClick(e));
-	}
-  
-	onClick(e) {
-	  // Stop default behaviour from the browser
-	  e.preventDefault();
-	  // Add an overflow on the <details> to avoid content overflowing
-	  this.el.style.overflow = 'hidden';
-	  // Check if the element is being closed or is already closed
-	  if (this.isClosing || !this.el.open) {
-		this.open();
-	  // Check if the element is being openned or is already open
-	  } else if (this.isExpanding || this.el.open) {
-		this.shrink();
-	  }
-	}
-  
-	shrink() {
-	  // Set the element as "being closed"
-	  this.isClosing = true;
-	  
-	  // Store the current height of the element
-	  const startHeight = `${this.el.offsetHeight}px`;
-	  // Calculate the height of the summary
-	  const endHeight = `${this.summary.offsetHeight}px`;
-	  
-	  // If there is already an animation running
-	  if (this.animation) {
-		// Cancel the current animation
-		this.animation.cancel();
-	  }
-	  
-	  // Start a WAAPI animation
-	  this.animation = this.el.animate({
-		// Set the keyframes from the startHeight to endHeight
-		height: [startHeight, endHeight]
-	  }, {
-		duration: 400,
-		easing: 'ease-out'
-	  });
-	  
-	  // When the animation is complete, call onAnimationFinish()
-	  this.animation.onfinish = () => this.onAnimationFinish(false);
-	  // If the animation is cancelled, isClosing variable is set to false
-	  this.animation.oncancel = () => this.isClosing = false;
-	}
-  
-	open() {
-	  // Apply a fixed height on the element
-	  this.el.style.height = `${this.el.offsetHeight}px`;
-	  // Force the [open] attribute on the details element
-	  this.el.open = true;
-	  // Wait for the next frame to call the expand function
-	  window.requestAnimationFrame(() => this.expand());
-	}
-  
-	expand() {
-	  // Set the element as "being expanding"
-	  this.isExpanding = true;
-	  // Get the current fixed height of the element
-	  const startHeight = `${this.el.offsetHeight}px`;
-	  // Calculate the open height of the element (summary height + content height)
-	  const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
-	  
-	  // If there is already an animation running
-	  if (this.animation) {
-		// Cancel the current animation
-		this.animation.cancel();
-	  }
-	  
-	  // Start a WAAPI animation
-	  this.animation = this.el.animate({
-		// Set the keyframes from the startHeight to endHeight
-		height: [startHeight, endHeight]
-	  }, {
-		duration: 400,
-		easing: 'ease-out'
-	  });
-	  // When the animation is complete, call onAnimationFinish()
-	  this.animation.onfinish = () => this.onAnimationFinish(true);
-	  // If the animation is cancelled, isExpanding variable is set to false
-	  this.animation.oncancel = () => this.isExpanding = false;
-	}
-  
-	onAnimationFinish(open) {
-	  // Set the open attribute based on the parameter
-	  this.el.open = open;
-	  // Clear the stored animation
-	  this.animation = null;
-	  // Reset isClosing & isExpanding
-	  this.isClosing = false;
-	  this.isExpanding = false;
-	  // Remove the overflow hidden and the fixed height
-	  this.el.style.height = this.el.style.overflow = '';
-	}
-  }
-  
-  document.querySelectorAll('details').forEach((el) => {
-	new Accordion(el);
-  });
