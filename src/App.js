@@ -7,6 +7,7 @@ import Overview from './pages/Overview';
 import Ranking from './pages/Ranking';
 import Admin from './pages/Admin';
 import BibleRange from './pages/BibleRange';
+import NotFound from './pages/NotFound';
 
 function App() {
 	return (
@@ -14,12 +15,13 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Intro />} />
-					<Route path="/" element={<Login />} />
-					<Route path="/" element={<DatePicker />} />
-					<Route path="/" element={<Overview />} />
-					<Route path="/" element={<Ranking />} />
-					<Route path="/" element={<Admin />} />
-					<Route path="/" element={<BibleRange />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/datepicker" element={<DatePicker />} />
+					<Route path="/overview" element={<Overview />} />
+					<Route path="/ranking" element={<Ranking />} />
+					<Route path="/admin" element={<Admin />} />
+					<Route path="/biblerange" element={<BibleRange />} />
+					<Route path="/*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
