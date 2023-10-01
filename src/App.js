@@ -8,10 +8,7 @@ import Ranking from './pages/Ranking';
 import Admin from './pages/Admin';
 import BibleRange from './pages/BibleRange';
 import NotFound from './pages/NotFound';
-<<<<<<< HEAD
 import Join from './pages/Join';
-=======
->>>>>>> feat/calendar
 
 function App() {
 	return (
@@ -19,10 +16,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Intro />} />
-<<<<<<< HEAD
 					<Route path="/join" element={<Join />} />
-=======
->>>>>>> feat/calendar
 					<Route path="/login" element={<Login />} />
 					<Route path="/datepicker" element={<DatePicker />} />
 					<Route path="/overview" element={<Overview />} />
