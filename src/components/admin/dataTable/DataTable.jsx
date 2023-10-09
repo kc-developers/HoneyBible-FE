@@ -19,7 +19,7 @@ function DataTable() {
 
 	useEffect(() => {
 		axios
-			.get('https://localhost:8080/api/admin')
+			.get('https://localhost:8080/user/all')
 			.then((res) => {
 				setData((prev) => [res.data.data]);
 			})
@@ -46,7 +46,8 @@ function DataTable() {
 
 	return (
 		<TableContainer>
-			<Table size="small">
+			<Table stickyHeader size="small">
+				{/* stickyHeader 적용 여부 확인하기 */}
 				<TableHead>
 					<TableRow>
 						<TableCell align="center">버튼</TableCell>
@@ -71,21 +72,6 @@ export default DataTable;
 export const examples = [
 	{
 		age: 98,
-		name: '추희승',
-		sum: 30,
-	},
-	{
-		age: 97,
-		name: '추희승',
-		sum: 30,
-	},
-	{
-		age: 88,
-		name: '추희승',
-		sum: 30,
-	},
-	{
-		age: 988,
 		name: '추희승',
 		sum: 30,
 	},
