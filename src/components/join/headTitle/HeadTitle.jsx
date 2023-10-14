@@ -53,11 +53,20 @@ function HeadTitle({ text }) {
 			</button>
 			<ModalCustom isOpen={modalOpen} closeModal={handleClose}>
 				<Box>
-					<form onSubmit={handleSubmit}>
-						<div>관리자 비밀번호를 입력하세요.</div>
-						<input type="password" value={password} onChange={handlePwChange} />
-						<button>입력 완료</button>
-					</form>
+					<div className={styles.modalWrapper}>
+						<div className={styles.modalTitle}>
+							관리자 비밀번호를 입력하세요.
+						</div>
+						<form onSubmit={handleSubmit} className={styles.modalForm}>
+							<input
+								type="password"
+								className={styles.modalInput}
+								value={password}
+								onChange={handlePwChange}
+							/>
+							<button className={styles.modalButton}>입력 완료</button>
+						</form>
+					</div>
 				</Box>
 			</ModalCustom>
 		</div>
