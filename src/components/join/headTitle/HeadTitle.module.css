@@ -38,3 +38,39 @@
 	font-size: 3rem;
 	flex-shrink: 0;
 }
+
+.modalWrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.modalTitle {
+	margin-top: 2rem;
+	margin-bottom: 8rem;
+	font-size: 2rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+.modalForm {
+	width: 100%;
+	text-align: center;
+}
+
+.modalInput {
+	width: 40%;
+	height: 2rem;
+	margin-bottom: 2rem;
+	padding: 1rem 0;
+	font-size: 2rem;
+}
+
+.modalButton {
+	display: block;
+	margin: 0 auto;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	background-color: var(--color-button-yellow);
+	border-radius: 30px;
+	border: 1px solid var(--color-button-yellow);
+}
