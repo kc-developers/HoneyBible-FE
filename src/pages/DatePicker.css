@@ -5,9 +5,17 @@
     border-radius: 8px;
     margin: auto;
 }
+/*darkYellow button*/
+.dYellowBtn{
+    background-color: #896A01;
+    color: white;
+    border-radius: 8px;
+    margin: auto;
+}
 /*black button*/
 .blackBtn{
     background-color: #333;
+    color: white;
     border-radius: 50px;
     margin: auto;
 }

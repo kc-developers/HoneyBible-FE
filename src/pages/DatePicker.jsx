@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
+import moment from 'moment';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
+import { useParams } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 import './DatePicker.css';
 // import { Modal } from '@mui/material';
 
 function DatePicker(props) {
+	//current Date
+	const today = new Date();
+	const formattedDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
+	//clicked date (default : today date)
 	const [value, onChange] = useState(new Date());
+	//tomorrow disabled dates
+	// const { id } = useParams();
+	// const [disabledDates, setDisabledDates] = useState([]);
+	//modal   
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	// const [mark, setMark] = useState([]);
@@ -27,17 +37,34 @@ function DatePicker(props) {
 	// 	},
 	//   }
 	// );
+	
+	//tomorrow disabled dates
+	// useEffect(() => {
+	// 	loadDisabledDates();
+	// }, []);
+
+	// function loadDisabledDates(){ 
+	// 	Api 
+	// 	.get("/dates/"+id) 
+	// 	.then((response) => { 
+	// 		setDisabledDates(response.data);
+	// 	}) 
+	// 	.catch((err) => {
+	// 			console.error("error: " + err);
+	// 	}); 
+	// }
 
   return (
     <div>
-		{/* <div className="text-gray-500 mt-4">
-			{moment(value).format("YYYY년 MM월 DD일")} 
-		</div> */}
+		<div>{formattedDate}</div>
+		<button className="dYellowBtn">TODAY</button>
+		<div>오늘 꿀성경</div>
 		<button className="yellowBtn">랭킹 보기</button>
 		<button className="yellowBtn">성경개관</button>
 		<Calendar 
 			onChange = {onChange} // useState로 포커스 변경 시 현재 날짜 받아오기
 			value = {value} 
+			view = 'month'
 			// selectRange = {true}
 			formatDay = {(locale, date) => dayjs(date).format('DD')} // 날'일' 제외하고 숫자만 보이도록 설정
 			calendarType="US" // 일요일로 시작하는 캘린더 타입
@@ -55,6 +82,9 @@ function DatePicker(props) {
 		/>
 		<button onClick={()=>setModalIsOpen(true)} className="blackBtn">체크하기</button>
 		<Modal isOpen={modalIsOpen}>
+			<div className="curDate">
+				{moment(value).format("YYYY년 MM월 DD일")} 
+			</div>
 			해당 기간 꿀성경 체크를 하시겠습니까?
 			<div>
 				<button onClick={()=>setModalIsOpen(false)}>다시 체크하기</button>
