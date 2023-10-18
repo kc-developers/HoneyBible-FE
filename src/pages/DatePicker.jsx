@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
+import moment from 'moment';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
+import { useParams } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 import './DatePicker.css';
 // import { Modal } from '@mui/material';
 
 function DatePicker(props) {
+	//current Date
+	const today = new Date();
+	const formattedDate = `${today.getFullYear()}년 ${
+		today.getMonth() + 1
+	}월 ${today.getDate()}일`;
+	//clicked date (default : today date)
 	const [value, onChange] = useState(new Date());
+	//tomorrow disabled dates
+	// const { id } = useParams();
+	// const [disabledDates, setDisabledDates] = useState([]);
+	//modal
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	// const [mark, setMark] = useState([]);
@@ -27,6 +39,22 @@ function DatePicker(props) {
 	// 	},
 	//   }
 	// );
+
+	//tomorrow disabled dates
+	// useEffect(() => {
+	// 	loadDisabledDates();
+	// }, []);
+
+	// function loadDisabledDates(){
+	// 	Api
+	// 	.get("/dates/"+id)
+	// 	.then((response) => {
+	// 		setDisabledDates(response.data);
+	// 	})
+	// 	.catch((err) => {
+	// 			console.error("error: " + err);
+	// 	});
+	// }
 
 	return (
 		<div>
