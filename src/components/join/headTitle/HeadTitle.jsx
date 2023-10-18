@@ -5,8 +5,7 @@ import styles from './HeadTitle.module.css';
 import { useNavigate } from 'react-router-dom';
 import ModalCustom from '../modal/ModalCustom';
 import { Box } from '@mui/material';
-
-const PASSWORD = '1234';
+import { ADMIN_PASSWORD } from '../../../App';
 
 function HeadTitle({ text }) {
 	const [modalOpen, setModalOpen] = useState(false);
@@ -29,7 +28,7 @@ function HeadTitle({ text }) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (password === PASSWORD) {
+		if (password === ADMIN_PASSWORD) {
 			navigate('/admin');
 		} else {
 			alert('비밀번호가 틀립니다.'); // 휴대폰 화면에 맞게 알림창 수정하기

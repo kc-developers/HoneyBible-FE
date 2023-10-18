@@ -12,6 +12,8 @@ import Join from './pages/Join';
 import { useState } from 'react';
 import Loading from './pages/Loading';
 
+export const ADMIN_PASSWORD = '1234';
+
 function App() {
 	const [loading, setLoading] = useState(false);
 
