@@ -10,24 +10,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { dates } from './dates';
 import DataRow from './DataRow';
+import { example } from './example';
 
 function DataTable() {
-	const [datas, setDatas] = useState(examples);
-
-	/* data 받아오는 부분 .. 데이터 어떻게 짰는지 알아야 함!!
-	const [data, setData] = useState([]);
-
-	useEffect(() => {
-		axios
-			.get('https://localhost:8080/user/all')
-			.then((res) => {
-				setData((prev) => [res.data.data]);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-	}, []);
-	*/
+	const [datas, setDatas] = useState(example);
+	// const [datas, setDatas] = useState([]);
 
 	const dateHeaders = dates.map((date, i) => {
 		const components = date.map((day) => {
@@ -44,10 +31,23 @@ function DataTable() {
 		return components;
 	});
 
+	useEffect(() => {
+		// axios
+		// 	.get('http://193.122.105.88:8080/user/all')
+		// 	.then((res) => {
+		// 		console.log(res); // res.data.result
+		// 		setDatas((res) => [...example]);
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log(err);
+		// 	});
+		// setDatas(example);
+		// console.log(datas);
+	}, []);
+
 	return (
 		<TableContainer>
-			<Table stickyHeader size="small">
-				{/* stickyHeader 적용 여부 확인하기 */}
+			<Table size="small">
 				<TableHead>
 					<TableRow>
 						<TableCell align="center">버튼</TableCell>
@@ -59,7 +59,7 @@ function DataTable() {
 				</TableHead>
 				<TableBody>
 					{datas.map((data) => {
-						return <DataRow key={`${data.age}_${data.name}`} data={data} />;
+						return <DataRow key={`${data.MEMBER_NUM}`} data={data} />;
 					})}
 				</TableBody>
 			</Table>
@@ -68,11 +68,3 @@ function DataTable() {
 }
 
 export default DataTable;
-
-export const examples = [
-	{
-		age: 98,
-		name: '추희승',
-		sum: 30,
-	},
-];
