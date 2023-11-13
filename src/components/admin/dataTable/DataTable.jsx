@@ -13,8 +13,8 @@ import DataRow from './DataRow';
 import { example } from './example';
 
 function DataTable() {
-	const [datas, setDatas] = useState(example);
-	// const [datas, setDatas] = useState([]);
+	// const [datas, setDatas] = useState(example);
+	const [datas, setDatas] = useState([]);
 
 	const dateHeaders = dates.map((date, i) => {
 		const components = date.map((day) => {
@@ -32,15 +32,22 @@ function DataTable() {
 	});
 
 	useEffect(() => {
-		// axios
-		// 	.get('http://193.122.105.88:8080/user/all')
-		// 	.then((res) => {
-		// 		console.log(res); // res.data.result
-		// 		setDatas((res) => [...example]);
-		// 	})
-		// 	.catch((err) => {
-		// 		console.log(err);
-		// 	});
+		axios
+			.get('http://172.30.1.37:8080/user/all', {
+				headers: {
+					withCredentials: true,
+					Accept: 'application/json',
+					// 'Access-Control-Allow-Origin': 'http://localhost:3000',
+				},
+			})
+			.then((res) => {
+				console.log(res); // res.data.result
+				setDatas((res) => [...example]);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+
 		// setDatas(example);
 		// console.log(datas);
 	}, []);
