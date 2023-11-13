@@ -149,15 +149,15 @@ function InputForm({ type }) {
 				)}
 			</div>
 			{type === 'join' && (
-				<button className={styles.button}>회원가입 하기</button>
+				<button className={styles.buttonJoin}>회원가입 하기</button>
 			)}
 			{type === 'login' && (
 				<div className={styles.buttonWrap}>
 					<div className={styles.infoWrap}>
-						<p className={styles.info}>아직 꿀성경 멤버가 아니신가요? | </p>
-						<p className={styles.info}> 회원가입</p>
+						<p className={styles.info}>아직 꿀성경 멤버가 아니신가요? |</p>
+						<p className={styles.infoMargin}>회원가입</p>
 					</div>
-					<button className={styles.button}>로그인 하기</button>
+					<button className={styles.buttonLogin}>로그인 하기</button>
 				</div>
 			)}
 		</form>

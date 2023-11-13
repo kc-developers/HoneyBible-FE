@@ -56,7 +56,20 @@
 .buttonWrap {
 }
 
-.button {
+.buttonJoin {
+	width: 90%;
+	padding: 2rem;
+	margin: 0 2rem;
+	margin-top: 15rem;
+	background-color: var(--color-button-yellow);
+	border-radius: 30px;
+	border: 1px solid var(--color-button-yellow);
+	font-size: 1.8rem;
+	font-style: normal;
+	font-weight: 700;
+}
+
+.buttonLogin {
 	width: 90%;
 	padding: 2rem;
 	margin: 0 2rem;
@@ -72,11 +85,21 @@
 .infoWrap {
 	width: 66%;
 	margin: 0 auto;
-	margin-top: 32rem;
+	margin-top: 10rem;
 	display: flex;
 }
 
 .info {
+	color: #fff;
+	text-align: center;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+
+.infoMargin {
+	margin-left: 0.4rem;
 	color: #fff;
 	text-align: center;
 	font-size: 15px;
