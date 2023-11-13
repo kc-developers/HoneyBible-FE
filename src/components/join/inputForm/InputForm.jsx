@@ -7,8 +7,10 @@ import { options } from './options';
 function InputForm({ type }) {
 	const [age, setAge] = useState(null);
 	const [name, setName] = useState('');
+	const [phone, setPhone] = useState('');
 	const [ageValid, setAgeValid] = useState(false);
 	const [nameValid, setNameValid] = useState(false);
+	const [phoneValid, setPhoneValid] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -40,6 +42,20 @@ function InputForm({ type }) {
 		}
 	};
 
+	const handlePhoneChange = (e) => {
+		setPhone(e.target.value);
+		handlePhoneValid(e.target.value);
+	};
+
+	const handlePhoneValid = (phone) => {
+		// - 없이 문자열 길이가 11인 경우에만 true로 변경
+		if (!phone.includes('-') && phone.length === 11) {
+			setPhoneValid(true);
+		} else {
+			setPhoneValid(false);
+		}
+	};
+
 	const handleSubmit = async (e) => {
 		if (nameValid && ageValid) {
 			e.preventDefault();
@@ -55,9 +71,11 @@ function InputForm({ type }) {
 						name: name,
 						age: age,
 					},
-				}).then((res) => {
-					console.log(res);
-				});
+				})
+					.then((res) => {
+						console.log(res);
+					})
+					.catch((err) => console.log(err));
 
 				alert('회원가입이 완료되었습니다.');
 				navigate('/login');
@@ -95,7 +113,7 @@ function InputForm({ type }) {
 					onChange={handleNameChange}
 				/>
 				{!nameValid && (
-					<div className={styles.message}>*한글만 입력해 주세요</div>
+					<div className={styles.message}>* 한글만 입력해 주세요</div>
 				)}
 			</div>
 			<div className={styles.inputWrap}>
@@ -115,19 +133,31 @@ function InputForm({ type }) {
 					))}
 				</select>
 				{!ageValid && (
-					<div className={styles.message}>*또래가 선택되지 않았습니다</div>
+					<div className={styles.message}>* 또래가 선택되지 않았습니다</div>
+				)}
+			</div>
+			<div>
+				<input
+					type="tel"
+					placeholder="전화번호를 - 없이 입력해 주세요"
+					className={styles.input}
+					value={phone}
+					onChange={handlePhoneChange}
+				/>
+				{!phoneValid && (
+					<div className={styles.message}>* '-' 없이 숫자만 입력해 주세요</div>
 				)}
 			</div>
 			{type === 'join' && (
-				<button className={styles.button}>회원가입 하기</button>
+				<button className={styles.buttonJoin}>회원가입 하기</button>
 			)}
 			{type === 'login' && (
 				<div className={styles.buttonWrap}>
 					<div className={styles.infoWrap}>
-						<p className={styles.info}>아직 꿀성경 멤버가 아니신가요? | </p>
-						<p className={styles.info}> 회원가입</p>
+						<p className={styles.info}>아직 꿀성경 멤버가 아니신가요? |</p>
+						<p className={styles.infoMargin}>회원가입</p>
 					</div>
-					<button className={styles.button}>로그인 하기</button>
+					<button className={styles.buttonLogin}>로그인 하기</button>
 				</div>
 			)}
 		</form>

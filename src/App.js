@@ -9,12 +9,20 @@ import Admin from './pages/Admin';
 import BibleRange from './pages/BibleRange';
 import NotFound from './pages/NotFound';
 import Join from './pages/Join';
+import { useState } from 'react';
+import Loading from './pages/Loading';
 
 function App() {
+	const [loading, setLoading] = useState(false);
+
 	return (
 		<div className="App">
+			{/* {loading ? (
+				<Loading />
+			) : ( */}
 			<BrowserRouter>
 				<Routes>
+					<Route path="/loading" element={<Loading />} />
 					<Route path="/" element={<Intro />} />
 					<Route path="/join" element={<Join />} />
 					<Route path="/login" element={<Login />} />
@@ -26,6 +34,7 @@ function App() {
 					<Route path="/*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
+			{/* )} */}
 		</div>
 	);
 }
