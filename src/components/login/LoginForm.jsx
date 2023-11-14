@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from './InputForm.module.css';
+import styles from './LoginForm.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { options } from './options';
+import { options } from '../join/joinForm/options';
 
-function InputForm({ type }) {
+function LoginForm() {
 	const [age, setAge] = useState(null);
 	const [name, setName] = useState('');
 	const [phone, setPhone] = useState('');
@@ -48,8 +48,7 @@ function InputForm({ type }) {
 	};
 
 	const handlePhoneValid = (phone) => {
-		// - 없이 문자열 길이가 11인 경우에만 true로 변경
-		if (!phone.includes('-') && phone.length === 11) {
+		if (phone.length === 4) {
 			setPhoneValid(true);
 		} else {
 			setPhoneValid(false);
@@ -60,45 +59,23 @@ function InputForm({ type }) {
 		if (nameValid && ageValid) {
 			e.preventDefault();
 
-			if (type === 'join') {
-				console.log(name, age);
+			console.log(name, age);
 
-				const result = await axios({
-					headers: {},
-					method: 'POST',
-					url: 'https://localhost:8080/auth/join', // url 수정
-					data: {
-						name: name,
-						age: age,
-					},
-				})
-					.then((res) => {
-						console.log(res);
-					})
-					.catch((err) => console.log(err));
+			const result = await axios({
+				headers: {},
+				method: 'POST',
+				url: 'https://localhost:8080/auth/login', // url 수정
+				data: {
+					name: name,
+					age: age,
+				},
+			}).then((res) => {
+				console.log(res);
+				// localStorage에 토큰 저장하거나 할 일 추가하기
 
-				alert('회원가입이 완료되었습니다.');
-				navigate('/login');
-			} else {
-				// type === 'login'
-				console.log(name, age);
-
-				const result = await axios({
-					headers: {},
-					method: 'POST',
-					url: 'https://localhost:8080/auth/login', // url 수정
-					data: {
-						name: name,
-						age: age,
-					},
-				}).then((res) => {
-					console.log(res);
-					// localStorage에 토큰 저장하거나 할 일 추가하기
-
-					alert('로그인에 성공했습니다.');
-					navigate('/datepicker');
-				});
-			}
+				alert('로그인에 성공했습니다.');
+				navigate('/datepicker');
+			});
 		}
 	};
 
@@ -139,29 +116,24 @@ function InputForm({ type }) {
 			<div>
 				<input
 					type="tel"
-					placeholder="전화번호를 - 없이 입력해 주세요"
+					placeholder="전화번호 뒷자리 4개를 입력해 주세요"
 					className={styles.input}
 					value={phone}
 					onChange={handlePhoneChange}
 				/>
 				{!phoneValid && (
-					<div className={styles.message}>* '-' 없이 숫자만 입력해 주세요</div>
+					<div className={styles.message}>* 4자리만 입력해 주세요</div>
 				)}
 			</div>
-			{type === 'join' && (
-				<button className={styles.buttonJoin}>회원가입 하기</button>
-			)}
-			{type === 'login' && (
-				<div className={styles.buttonWrap}>
-					<div className={styles.infoWrap}>
-						<p className={styles.info}>아직 꿀성경 멤버가 아니신가요? |</p>
-						<button className={styles.buttonRoute}>회원가입</button>
-					</div>
-					<button className={styles.buttonLogin}>로그인 하기</button>
+			<div className={styles.buttonWrap}>
+				<div className={styles.infoWrap}>
+					<p className={styles.info}>아직 꿀성경 멤버가 아니신가요? |</p>
+					<button className={styles.buttonRoute}>회원가입</button>
 				</div>
-			)}
+				<button className={styles.buttonLogin}>로그인 하기</button>
+			</div>
 		</form>
 	);
 }
 
-export default InputForm;
+export default LoginForm;
