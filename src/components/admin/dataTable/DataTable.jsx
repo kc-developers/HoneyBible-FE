@@ -37,7 +37,6 @@ function DataTable() {
 				headers: {
 					withCredentials: true,
 					Accept: 'application/json',
-					// 'Access-Control-Allow-Origin': 'http://localhost:3000',
 				},
 			})
 			.then((res) => {
