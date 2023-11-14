@@ -63,7 +63,7 @@ function JoinForm() {
 		if (nameValid && ageValid && phoneValid) {
 			e.preventDefault();
 
-			console.log(name, age);
+			console.log(name, age, phone);
 
 			// ver 1
 			const result = await axios({
@@ -81,12 +81,6 @@ function JoinForm() {
 			})
 				.then((response) => {
 					console.log(response);
-
-					// token 값 받아와서 세션 스토리지에 저장
-					// 어디서 토큰 받아오는지 알기 위해 출력
-					console.log(response.headers.authorization, response.data.token);
-					sessionStorage.setItem('token', response.data.token);
-					sessionStorage.setItem('token', response.headers.authorization);
 
 					alert('회원가입이 완료되었습니다.'); // alert창 확인 후 로그인 화면으로 이동
 					navigate('/login');

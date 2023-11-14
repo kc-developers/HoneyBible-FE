@@ -48,6 +48,7 @@ function LoginForm() {
 	};
 
 	const handlePhoneValid = (phone) => {
+		// 번호 뒷자리 4개인 경우만 true
 		if (phone.length === 4) {
 			setPhoneValid(true);
 		} else {
@@ -56,26 +57,62 @@ function LoginForm() {
 	};
 
 	const handleSubmit = async (e) => {
-		if (nameValid && ageValid) {
+		if (nameValid && ageValid && phoneValid) {
 			e.preventDefault();
 
-			console.log(name, age);
+			console.log(name, age, phone);
 
+			// ver 1
 			const result = await axios({
-				headers: {},
+				headers: { withCredentials: true, Accept: 'application/json' },
 				method: 'POST',
-				url: 'https://localhost:8080/auth/login', // url 수정
+				url: 'http://193.122.105.88:8080/', // url 수정
 				data: {
 					name: name,
-					age: age,
+					ttolae: age,
+					phone: phone,
 				},
-			}).then((res) => {
-				console.log(res);
-				// localStorage에 토큰 저장하거나 할 일 추가하기
+			})
+				.then((response) => {
+					console.log(response);
 
-				alert('로그인에 성공했습니다.');
-				navigate('/datepicker');
-			});
+					// token 값 받아와서 세션 스토리지에 저장
+					// 어디서 토큰 받아오는지 알기 위해 출력
+					console.log(response.headers.authorization, response.data.token);
+					sessionStorage.setItem('token', response.data.token);
+					sessionStorage.setItem('token', response.headers.authorization);
+
+					alert('로그인에 성공했습니다.');
+					navigate('/datepicker'); // 달력 화면으로 이동
+				})
+				.catch((err) => console.log(err));
+
+			// ver 2
+			/*
+			axios
+				.post('http://193.122.105.88:8080/', {
+					headers: {
+						widthCredentials: true,
+						Accept: 'application/json',
+					},
+					data: {
+						name: name,
+						ttolae: age,
+						phone: phone,
+					},
+				})
+				.then((response) => {
+					console.log(response);
+
+					console.log(response.headers.authorization, response.data.token); 
+					sessionStorage.setItem('token', response.data.token);
+					sessionStorage.setItem('token', response.headers.authorization);
+
+					alert('로그인에 성공했습니다.');
+					navigate('/datepicker'); // 달력 화면으로 이동
+				})
+				.catch((err) => console.log(err));
+			*/
 		}
 	};
 
