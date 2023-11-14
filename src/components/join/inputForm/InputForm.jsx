@@ -155,7 +155,7 @@ function InputForm({ type }) {
 				<div className={styles.buttonWrap}>
 					<div className={styles.infoWrap}>
 						<p className={styles.info}>아직 꿀성경 멤버가 아니신가요? |</p>
-						<p className={styles.infoMargin}>회원가입</p>
+						<button className={styles.buttonRoute}>회원가입</button>
 					</div>
 					<button className={styles.buttonLogin}>로그인 하기</button>
 				</div>
