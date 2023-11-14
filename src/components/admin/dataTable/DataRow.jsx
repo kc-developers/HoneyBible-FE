@@ -2,9 +2,9 @@ import { TableCell, TableRow } from '@mui/material';
 import React, { useState } from 'react';
 
 function DataRow(data) {
-	const { age, name, sum } = data.data;
+	const { TTOLAE, NAME } = data.data;
 
-	const [newData, setNewData] = useState({ age, name, sum });
+	const [newData, setNewData] = useState({ TTOLAE, NAME });
 	const [updated, setUpdated] = useState(false);
 
 	const handleChange = (e) => {
@@ -70,9 +70,8 @@ function DataRow(data) {
 				</>
 			) : (
 				<>
-					<TableCell>{age}</TableCell>
-					<TableCell>{name}</TableCell>
-					<TableCell>{sum}</TableCell>
+					<TableCell>{TTOLAE}</TableCell>
+					<TableCell>{NAME}</TableCell>
 				</>
 			)}
 		</TableRow>

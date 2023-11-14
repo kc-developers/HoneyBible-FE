@@ -1,5 +1,6 @@
 .formWrap {
 	width: 100%;
+	height: 100%;
 }
 
 .message {
@@ -53,9 +54,23 @@
 }
 
 .buttonWrap {
+	width: 100%;
 }
 
-.button {
+.buttonJoin {
+	width: 90%;
+	padding: 2rem;
+	margin: 0 2rem;
+	margin-top: 15rem;
+	background-color: var(--color-button-yellow);
+	border-radius: 30px;
+	border: 1px solid var(--color-button-yellow);
+	font-size: 1.8rem;
+	font-style: normal;
+	font-weight: 700;
+}
+
+.buttonLogin {
 	width: 90%;
 	padding: 2rem;
 	margin: 0 2rem;
@@ -69,17 +84,30 @@
 }
 
 .infoWrap {
-	width: 66%;
+	width: 100%;
+	justify-content: center;
 	margin: 0 auto;
-	margin-top: 32rem;
+	margin-top: 10rem;
 	display: flex;
 }
 
 .info {
 	color: #fff;
 	text-align: center;
-	font-size: 15px;
+	font-size: 1.5rem;
 	font-style: normal;
 	font-weight: 300;
 	line-height: normal;
+}
+
+.buttonRoute {
+	display: inline;
+	padding: 0;
+	margin-left: 0.4rem;
+	background-color: transparent;
+	border: none;
+	color: #ffffff;
+	font-size: 1.5rem;
+	font-weight: 600;
+	vertical-align: text-top;
 }

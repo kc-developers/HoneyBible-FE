@@ -1,13 +1,13 @@
 import React from 'react';
 import HeadTitle from '../components/join/headTitle/HeadTitle';
 import styles from './Login.module.css';
-import InputForm from '../components/join/inputForm/InputForm';
+import LoginForm from '../components/login/LoginForm';
 
 function Login() {
 	return (
 		<div className={styles.loginWrap}>
 			<HeadTitle text={'로그인'} />
-			<InputForm type={'login'} />
+			<LoginForm />
 		</div>
 	);
 }
