@@ -1,3 +1,21 @@
+/*basic setting*/
+.container{
+	width: 100vw;
+	height: 100vh;
+    background: #F2C016;
+	margin: auto;
+    border-radius: 30px;
+}
+.textMiddle {
+	font-size: 1.6rem;
+	letter-spacing: -0.03em;
+	font-weight: 400;
+	color: white;
+}
+.textSmall {
+	margin-top: 2rem;
+	font-size: 1.6rem;
+}
 /*page open toggle button*/
 .togBtn{
     display: inline;
@@ -23,10 +41,14 @@
 }
 /*yellow button*/
 .yellowBtn {
+    display: inline;
 	background-color: #d1a200;
 	color: white;
 	border-radius: 8px;
-	margin: auto;
+    width: 50%;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
 }
 /*darkYellow button*/
 .dYellowBtn {
@@ -41,6 +63,10 @@
 	color: white;
 	border-radius: 50px;
 	margin: auto;
+    width: 100%;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
 }
 .modal {
 	width: 300px;

@@ -3,25 +3,66 @@ import Calendar from 'react-calendar';
 import moment from 'moment';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
+import 'moment/locale/ko'; // moment 한글 로캘 추가(요일 한글화 용도)
 import { useNavigate } from "react-router-dom";
 import 'react-calendar/dist/Calendar.css';
 import './DatePicker.css';
-// import { Modal } from '@mui/material';
 function DatePicker(props) {
+	//Dashboard
+	const [isVisible, setIsVisible] = useState(false);
+
+	const toggleBottomSheet = () => {
+	  setIsVisible(!isVisible);
+	};
+
+
     //current Date
     const today = new Date();
     const formattedDate = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
-    //clicked date (default : today date)
+    
+	//clicked date (default : today date)
     const [value, onChange] = useState(new Date());
+
     //checked toggle calendar
     const [isOpen, setOpen] = useState(false);
+
     //checked today read Bible
     const [isCheck, setCheck] = useState(false);
+	
     //page navigation
     const navigate = useNavigate();
+	const navigateToRanking = () => {
+        navigate("/ranking");
+    }
     const navigateToOverview = () => {
         navigate("/overview");
     }
+
+	//remove prev/next year button
+	const headerRender = () => null;
+
+	//요일 텍스트 일->주
+	const formatShortWeekday = (locale, date) => {
+		const weekdays = ['주', '월', '화', '수', '목', '금', '토'];
+		return weekdays[date.getDay()];
+	  };
+
+	//date range picker
+	const [selectedRange, setSelectedRange] = useState([]);
+	const [startDate, setStartDate] = useState(null);
+
+	const handleDateClick = (value) => {
+		// 시작 날짜가 설정되지 않았으면 시작 날짜로 설정
+		if (!startDate) {
+		setStartDate(value);
+		} else {
+		// 시작 날짜가 설정되어 있으면 선택 범위를 배열에 추가
+		const newRange = [startDate, value];
+		setSelectedRange(newRange);
+		setStartDate(null); // 시작 날짜 초기화
+		}
+	};
+
     //tomorrow disabled dates
     const [date, setDate] = useState(new Date());
     const disabledDates = () => {
@@ -56,38 +97,59 @@ function DatePicker(props) {
     //   }
     // );
     return (
-        <div>
+			
+        <div className="container">
+			<button onClick={toggleBottomSheet}>Toggle Bottom Sheet</button>
+			{isVisible && (
+			<div style={{
+				position: 'fixed',
+				bottom: 0,
+				left: 0,
+				width: '100%',
+				height: '200px', // 원하는 높이로 조절
+				backgroundColor: 'white',
+				boxShadow: '0px -2px 10px rgba(0, 0, 0, 0.2)', // 그림자 추가
+				transition: 'transform 0.3s ease-in-out',
+			}}>
+				{/* 여기에 bottom sheet 내용 추가 */}
+				<p>This is the Bottom Sheet</p>
+			</div>
+			)}
             <div>
-                <span>{formattedDate}</span>
-                <button className="dYellowBtn">TODAY</button>
+                <span className="textMiddle">{formattedDate}</span>
+                <button className="dYellowBtn" disabled={true}>TODAY</button>
                 <button className="togBtn" onClick={() => {
                     //setOpen로 state값을 변경하기. e1로 상태값 받아왔음.)
                     setOpen((e1) => !e1);
                     }}
                 >
-                {isOpen ? "↓" : "↑"/* 추후 이미지를 넣어야할지? */}  
+                {isOpen ? <img src="./images/arrowBackBtn.svg"/> : <img src="./images/arrowOpenBtn.svg" alt="logo" />/* 추후 이미지를 넣어야할지? */}  
                 </button>
             </div>
-            <span>오늘 꿀성경</span>
+            <span className="textMiddle">오늘 꿀성경</span>
             <span className="chkBox">
                 <button onClick={() => {
                     //setCheck로 state값을 변경하기. e2로 상태값 받아왔음.)
                     setCheck((e2) => !e2);
                     }}
                 >
-                {isCheck ? "checked" : "unchecked"/* 추후 이미지를 넣어야할지? */} 
+                {isCheck ? <img src="./images/checked.svg"/> : <img src="./images/unchecked.svg" alt="logo" />/* 추후 이미지를 넣어야할지? */} 
                 </button>
             </span>
             <div>
-                <button className="yellowBtn">랭킹 보기</button>
+                <button className="yellowBtn" onClick={navigateToRanking}>랭킹 보기</button>
                 <button className="yellowBtn" onClick={navigateToOverview}>성경개관</button>
             </div>
-            
             <Calendar 
                 onChange = {onChange} // useState로 포커스 변경 시 현재 날짜 받아오기
-                value = {value} 
+        		value={selectedRange}
                 view = 'month'
-                // selectRange = {true}
+				rangeType='range'
+				selectRange={true}
+				onClickDay={handleDateClick} // 날짜 범위 선택용
+				next2Label={null} //년 단위 이동 버튼 제거
+				prev2Label={null} //년 단위 이동 버튼 제거
+				formatShortWeekday={formatShortWeekday}
                 formatDay = {(locale, date) => dayjs(date).format('DD')} // 날'일' 제외하고 숫자만 보이도록 설정
                 calendarType="US" // 일요일로 시작하는 캘린더 타입
                 tileDisabled={isDateDisabled}
@@ -106,7 +168,20 @@ function DatePicker(props) {
                 //   }}
             />
             <button onClick={()=>setModalIsOpen(true)} className="blackBtn">체크하기</button>
-            <Modal isOpen={modalIsOpen}>
+			<Modal isOpen={modalIsOpen}>
+				<div className="curDate">
+				{selectedRange.length === 1
+					? moment(selectedRange[0]).format("YYYY년 MM월 DD일 (dd)요일")
+					: `${moment(selectedRange[0]).format("YYYY년 MM월 DD일 (dd)요일")} - ${moment(selectedRange[1]).format("YYYY년 MM월 DD일 (dd)요일")}`}
+				</div>
+				해당 기간 꿀성경 체크를 하시겠습니까?
+                <div>
+                    <button onClick={()=>setModalIsOpen(false)}>다시 체크하기</button>
+                    <button onClick={()=>setModalIsOpen(false)} className="yellowBtn">예</button>
+                </div>
+			</Modal>
+			
+			{/* <Modal isOpen={modalIsOpen}>
                 <div className="curDate">
                     {moment(value).format("YYYY년 MM월 DD일")} 
                 </div>
@@ -115,7 +190,7 @@ function DatePicker(props) {
                     <button onClick={()=>setModalIsOpen(false)}>다시 체크하기</button>
                     <button onClick={()=>setModalIsOpen(false)} className="yellowBtn">예</button>
                 </div>
-            </Modal>
+            </Modal> */}
         </div>
       );
 }
