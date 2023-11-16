@@ -33,7 +33,7 @@ function DataTable() {
 
 	useEffect(() => {
 		axios
-			.get('http://172.30.1.37:8080/user/all', {
+			.get('http://193.122.105.88:8080/user/all', {
 				headers: {
 					withCredentials: true,
 					Accept: 'application/json',
