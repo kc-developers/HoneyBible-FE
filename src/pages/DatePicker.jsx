@@ -54,12 +54,14 @@ function DatePicker(props) {
 	const handleDateClick = (value) => {
 		// 시작 날짜가 설정되지 않았으면 시작 날짜로 설정
 		if (!startDate) {
-		setStartDate(value);
+			setStartDate(value);
+    		setSelectedRange([value]); // 하나의 날짜만 있는 배열로 설정
+		// setStartDate(value);
 		} else {
 		// 시작 날짜가 설정되어 있으면 선택 범위를 배열에 추가
-		const newRange = [startDate, value];
-		setSelectedRange(newRange);
-		setStartDate(null); // 시작 날짜 초기화
+			const newRange = [startDate, value];
+			setSelectedRange(newRange);
+			setStartDate(null); // 시작 날짜 초기화
 		}
 	};
 
@@ -169,10 +171,32 @@ function DatePicker(props) {
             />
             <button onClick={()=>setModalIsOpen(true)} className="blackBtn">체크하기</button>
 			<Modal isOpen={modalIsOpen}>
-				<div className="curDate">
-				{selectedRange.length === 1
+				<div className="curDate">				
+				{selectedRange && (
+      <>
+	  {console.log("selectedRange.length:", selectedRange.length)}
+        {selectedRange.length === 0 ? (  //여기 로직 작동안함.. selectedRange.length 로그도 이상함..
+          <span>{moment(selectedRange[0]).format("YYYY년 MM월 DD일 (dd)요일")}</span>
+        ) : (
+          <>
+							{selectedRange
+							.sort((a, b) => a - b) // 선택된 날짜를 오름차순으로 정렬
+							.map((date, index, array) => (
+								<span key={index}>
+								{moment(date).format("YYYY년 MM월 DD일 (dd)요일")}
+								{index < array.length - 1 && ' - '}
+								</span>
+							))}
+						</>
+						)}
+					</>
+					)}
+				{/* {selectedRange.length === 1
+				? moment(selectedRange[0]).format("YYYY년 MM월 DD일 (dd)요일")
+				: selectedRange.length === 2 && moment(selectedRange[0]).isSame(selectedRange[1], 'day')
 					? moment(selectedRange[0]).format("YYYY년 MM월 DD일 (dd)요일")
-					: `${moment(selectedRange[0]).format("YYYY년 MM월 DD일 (dd)요일")} - ${moment(selectedRange[1]).format("YYYY년 MM월 DD일 (dd)요일")}`}
+					: `${moment(selectedRange[0]).format("YYYY년 MM월 DD일 (dd)요일")} - ${moment(selectedRange[1]).format("YYYY년 MM월 DD일 (dd)요일")}`
+				}	 */}
 				</div>
 				해당 기간 꿀성경 체크를 하시겠습니까?
                 <div>
